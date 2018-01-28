@@ -4,12 +4,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Just a Programmer Trying Her Best. Atom">
 
 
 
@@ -27,11 +28,11 @@
 <meta property="og:title" content="ELK Beginner Tips"/>
 <meta property="og:description" content="ELK: Elasticsearch Logstash Kibana¶ELK Stack is an extremely useful and free analysis, storage, and visualization tool that I used at my internship to provide historical and up-to-date information on important elements of spacecraft storage systems. From the front end, scientists can interact with simple, beautiful, and flexible visualizations of the category of data, the volume over time, and the storage size by spacecraft. The data goes back as far as there are records, and it's simple to change the time range and explore different elements all within an iframe."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="./elk.html"/>
+<meta property="og:url" content="/elk.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-01-13 12:55:00-07:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="./author/maxine-hartnett.html">
+<meta property="article:author" content="/author/maxine-hartnett.html">
 <meta property="article:section" content="posts"/>
 <meta property="article:tag" content="first"/>
 <meta property="article:tag" content="elk"/>
@@ -43,15 +44,15 @@
 <body>
   <aside>
     <div>
-      <a href=".">
+      <a href="">
         <img src="logo.png" alt="" title="">
       </a>
-      <h1><a href="."></a></h1>
+      <h1><a href=""></a></h1>
 
 <p>Computer Science Student</p>
       <nav>
         <ul class="list">
-          <li><a href="./pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="/pages/about-me.html#about-me">About Me</a></li>
 
           <li><a href="https://www.linkedin.com/in/maxinehartnett/" target="_blank">LinkedIn</a></li>
           <li><a href="https://github.com/ceilingcranes" target="_blank">Github</a></li>
@@ -73,7 +74,7 @@
   <header>
     <h1 id="elk">ELK Beginner Tips</h1>
     <p>
-          Posted on Sat 13 January 2018 in <a href="./category/posts.html">posts</a>
+          Posted on Sat 13 January 2018 in <a href="/category/posts.html">posts</a>
 
 
     </p>
@@ -1059,7 +1060,7 @@ h6:hover .anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="ELK:-Elasticsearch-Logstash-Kibana">ELK: Elasticsearch Logstash Kibana<a class="anchor-link" href="#ELK:-Elasticsearch-Logstash-Kibana">¶</a></h1><p>ELK Stack is an extremely useful and free analysis, storage, and visualization tool that I used at my internship to provide historical and up-to-date information on important elements of spacecraft storage systems. From the front end, scientists can interact with simple, beautiful, and flexible visualizations of the category of data, the volume over time, and the storage size by spacecraft. The data goes back as far as there are records, and it's simple to change the time range and explore different elements all within an iframe.</p>
 <p>From the backend, it gets a lot more complicated. The software is free, but the company makes money by teaching companies how to use their software. Luckily for my employer, they have enough interns to just throw at the problem until they can figure it out.</p>
-<p>My coworker had the inenviable job of actually setting up the original ELK system to connect with databases and display huge amounts of data. I just had to duplicate a few visualizations from an existing (static) webpage and update the system to the latest version. I only had to install the plugins required for database access once, and it took the two of us several hours. I'm still not convinced it was actually working at the end, I have no idea how he managed it in the first place. I still shudder at the mention of Ruby gems.</p>
+<p>My coworker had the  inenviable job of actually setting up the original ELK system to connect with databases and display huge amounts of data. I just had to duplicate a few visualizations from an existing (static) webpage and update the system to the latest version. I only had to install the plugins required for database access once, and it took the two of us several hours. I'm still not convinced it was actually working at the end, I have no idea how he managed it in the first place. I still shudder at the mention of Ruby gems.</p>
 <p>To create the visualizations, the system first uses Logstash to read in data from log files. This data is stored in elasticsearch, which provides a quick and easy way to view, filter, and examine the data, and finally, Kibana was used to create the actual visualization in a slick browser interface.</p>
 <p>By far, the hardest part of the project was getting the different systems working together properly. The vast majority of the problems stemmed from the config files used by Logstash to read in different files. I went down so many rabbit holes that never ended up going anywhere, like trying to read them in using a csv plugin.</p>
 <p>Ultimately, the best way ended up being <a href="https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html">Grok</a>- a great filtering system that allowed me to read in from multiple files in the same configuration file and consolidate all my data in a really lovely way.</p>
@@ -1099,14 +1100,27 @@ h6:hover .anchor-link {
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="./tag/first.html">first</a>
-      <a href="./tag/elk.html">elk</a>
+      <a href="/tag/first.html">first</a>
+      <a href="/tag/elk.html">elk</a>
     </p>
   </div>
 
 
 
 
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'ceilingcranes';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
 </article>
 
     <footer>
@@ -1124,7 +1138,7 @@ h6:hover .anchor-link {
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Just a Programmer Trying Her Best. ",
-  "url" : ".",
+  "url" : "",
   "image": "logo.png",
   "description": "Junior in CS"
 }
