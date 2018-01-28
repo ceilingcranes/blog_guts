@@ -1,0 +1,18 @@
+NOTE: Your image isn't working on github. Fix that. 
+
+START VIRTUALENV:
+source blog/bin/activate
+
+TO FIX LIBRARY PATH:
+export LD_LIBRARY_PATH=~/anaconda3/lib
+
+To run locally:
+pelican content
+-> switch to output directory
+python -m pelican.server
+--> Will run at localhost:8000
+
+To deploy:
+pelican content -s publishconf.py
+ghp-import output -b master
+git push origin master
